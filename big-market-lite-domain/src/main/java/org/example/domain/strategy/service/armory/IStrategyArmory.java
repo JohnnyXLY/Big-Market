@@ -1,5 +1,9 @@
 package org.example.domain.strategy.service.armory;
 
+import org.example.domain.strategy.model.entity.StrategyAwardEntity;
+
+import java.util.List;
+
 /**
  * 策略装配库（兵工厂），负责初始化策略计算
  */
@@ -12,10 +16,5 @@ public interface IStrategyArmory {
      */
     boolean assembleLotteryStrategy(Long strategyId);
 
-    /**
-     * 获取抽奖策略装配的随机结果
-     * @param strategyId
-     * @return 抽奖结果
-     */
-    Integer getRandomAwardId(Long strategyId);
+    void assembleLotteryStrategy(String key, List<StrategyAwardEntity> strategyAwardEntities);
 }
