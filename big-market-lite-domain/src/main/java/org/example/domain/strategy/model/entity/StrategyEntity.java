@@ -23,6 +23,7 @@ public class StrategyEntity {
     /** 抽奖规则模型 */
     private String ruleModels;
 
+    // "rule_weight,rule_blacklist" -> ["rule_weight", "rule_blacklist"]
     public String[] ruleModels() {
         if (StringUtils.isBlank(ruleModels)) {
             return null;
@@ -30,6 +31,7 @@ public class StrategyEntity {
         return ruleModels.split(Constants.SPLIT);
     }
 
+    // 确认ruleModel字符串中是否含有"rule_weight"，有则返回
     public String getRuleWeight() {
         String[] ruleModels = this.ruleModels();
         for (String ruleModel : ruleModels) {

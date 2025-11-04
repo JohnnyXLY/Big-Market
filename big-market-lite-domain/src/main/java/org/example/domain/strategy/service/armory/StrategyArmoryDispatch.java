@@ -32,15 +32,17 @@ public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatc
         if (null == strategyAwardEntities || strategyAwardEntities.isEmpty()) {
             return false;
         }
+        // 普通情况下的策略装配(<4000)
         assembleLotteryStrategy(String.valueOf(strategyId), strategyAwardEntities);
 
         // 权重策略配置
         StrategyEntity strategyEntity = repository.queryStrategyEntityByStrategyId(strategyId);
-        String ruleWeight = strategyEntity.getRuleWeight();
+        String ruleWeight = strategyEntity.getRuleWeight();  // 确认ruleModel中是否含有rule_weight
         if (null == ruleWeight) {
             return true;
         }
 
+        // 查询对应的策略规则
         StrategyRuleEntity strategyRuleEntity = repository.queryStrategyRule(strategyId, ruleWeight);
         if (null == strategyRuleEntity) {
             throw new AppException(ResponseCode.STRATEGY_RULE_WEIGHT_IS_NULL.getCode(), ResponseCode.STRATEGY_RULE_WEIGHT_IS_NULL.getInfo());
@@ -53,12 +55,15 @@ public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatc
             // 创建克隆对象，避免删除(过滤)数据对原列表 strategyAwardEntities 造成影响
             ArrayList<StrategyAwardEntity> strategyAwardEntitiesClone = new ArrayList<>(strategyAwardEntities);
             // lambda 重写 Predicate 接口的test方法
+            // ruleWeightValues 中未出现的奖品id进行过滤清除
             strategyAwardEntitiesClone.removeIf(strategyAwardEntity -> !ruleWeightValues.contains(strategyAwardEntity.getAwardId()));
+            // 积分到达一定阈值(4000/5000/6000)后采取的策略装配
             assembleLotteryStrategy(String.valueOf(strategyId).concat("_").concat(key), strategyAwardEntitiesClone);
         }
         return true;
     }
 
+    @Override
     public void assembleLotteryStrategy(String key, List<StrategyAwardEntity> strategyAwardEntities) {
         //获取最小概率值
         BigDecimal minAwardRate = strategyAwardEntities.stream()
@@ -71,17 +76,18 @@ public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatc
                 .map(StrategyAwardEntity::getAwardRate)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
-        // 获取概率范围（奖品有多少份）
+        // 获取概率范围(奖品有多少份)
         BigDecimal rateRange = totalAwardRate.divide(minAwardRate, 0, RoundingMode.CEILING);  // 保留0位小数，向上取整
 
         // 建立策略查找表（依照奖品的比率进行构建）
-        List<Integer> strategyAwardSearchRateTables = new ArrayList<>(rateRange.intValue());
+        List<Integer> strategyAwardSearchRateTables = new ArrayList<>(rateRange.intValue());  // 设定初始容量，实际的列表size不高于初始容量
         for (StrategyAwardEntity strategyAwardEntity : strategyAwardEntities) {
             Integer awardId = strategyAwardEntity.getAwardId();
             BigDecimal awardRate = strategyAwardEntity.getAwardRate();
 
             // setScale(0, RoundingMode.CEILING) -> 保留0位小数，向上取整
             for (int i = 0; i < rateRange.multiply(awardRate).setScale(0, RoundingMode.CEILING).intValue(); i ++ ) {
+                // strategyAwardSearchRateTables的size等于添加元素的个数，与预设的初始容量无关(只是设定阈值)
                 strategyAwardSearchRateTables.add(awardId);
             }
         }
@@ -98,6 +104,7 @@ public class StrategyArmoryDispatch implements IStrategyArmory, IStrategyDispatc
         // 存放至redis
         repository.storeStrategyAwardSearchRateTable(key, shuffleStrategyAwardSearchRateTable.size(), shuffleStrategyAwardSearchRateTable);
     }
+
     @Override
     public Integer getRandomAwardId(Long strategyId) {
         Integer rateRange = repository.getRateRange(strategyId);

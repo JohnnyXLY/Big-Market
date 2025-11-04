@@ -1,6 +1,5 @@
 package org.example.infrastructure.persistent.repository;
 
-import lombok.Builder;
 import org.example.domain.strategy.model.entity.StrategyAwardEntity;
 import org.example.domain.strategy.model.entity.StrategyEntity;
 import org.example.domain.strategy.model.entity.StrategyRuleEntity;
@@ -17,7 +16,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -113,6 +111,8 @@ public class StrategyRepository implements IStrategyRepository {
                 .strategyDesc(strategy.getStrategyDesc())
                 .ruleModels(strategy.getRuleModels())
                 .build();
+
+        // 存入redis缓存
         redisService.setValue(cacheKey, strategyEntity);
         return strategyEntity;
     }
@@ -133,5 +133,15 @@ public class StrategyRepository implements IStrategyRepository {
                 .build();
 
         return strategyRuleEntity;
+    }
+
+    @Override
+    public String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel) {
+        StrategyRule strategyRule = new StrategyRule();
+        strategyRule.setStrategyId(strategyId);
+        strategyRule.setAwardId(awardId);
+        strategyRule.setRuleModel(ruleModel);
+
+        return strategyRuleDao.queryStrategyRuleValue(strategyRule);
     }
 }

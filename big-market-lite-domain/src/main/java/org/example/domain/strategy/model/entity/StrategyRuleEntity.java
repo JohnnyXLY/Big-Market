@@ -45,6 +45,7 @@ public class StrategyRuleEntity {
             return null;
         }
 
+        // ruleValue -> 4000:102,103,104,105 5000:102,103,104,105,106,107 6000:102,103,104,105,106,107,108,109
         // ruleValueGroups[0] -> 4000:102,103,104,105
         // ruleValueGroups[1] -> 5000:102,103,104,105,106,107
         // ruleValueGroups[2] -> 6000:102,103,104,105,106,107,108,109
@@ -72,6 +73,9 @@ public class StrategyRuleEntity {
             // values -> [102, 103, 104, 105]
             String[] valueStrings = parts[1].split(Constants.SPLIT);
             List<Integer> values = new ArrayList<>();
+            // 转换为: 4000 -> [102,103,104,105]
+            //        5000 -> [102,103,104,105,106,107]
+            //        6000 -> [102,103,104,105,106,107,108,109]
             for (String valueString : valueStrings) {
                 values.add(Integer.parseInt(valueString));
             }

@@ -16,5 +16,10 @@ public interface IStrategyArmory {
      */
     boolean assembleLotteryStrategy(Long strategyId);
 
+    /**
+     * 装配抽奖策略配置，适用于概率权重策略（抽奖N积分后改变中奖范围）
+     * @param key
+     * @param strategyAwardEntities
+     */
     void assembleLotteryStrategy(String key, List<StrategyAwardEntity> strategyAwardEntities);
 }
