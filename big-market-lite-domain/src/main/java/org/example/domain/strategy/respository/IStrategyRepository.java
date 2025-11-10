@@ -3,6 +3,7 @@ package org.example.domain.strategy.respository;
 import org.example.domain.strategy.model.entity.StrategyAwardEntity;
 import org.example.domain.strategy.model.entity.StrategyEntity;
 import org.example.domain.strategy.model.entity.StrategyRuleEntity;
+import org.example.domain.strategy.model.vo.StrategyAwardRuleModelVO;
 
 import java.util.List;
 import java.util.Map;
@@ -73,4 +74,12 @@ public interface IStrategyRepository {
      * @return
      */
     String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel);
+
+    /**
+     * 通过策略id + 奖品id查询获奖模型值对象(StrategyAwardRuleModelVO)
+     * @param strategyId
+     * @param awardId
+     * @return
+     */
+    StrategyAwardRuleModelVO queryStrategyAwardRuleModelVO(Long strategyId, Integer awardId);
 }

@@ -19,6 +19,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 【抽奖前规则】 根据抽奖权重返回可抽奖范围
+ */
+
 @Slf4j
 @Component
 @LogicStrategy(logicMode = DefaultLogicFactory.LogicModel.RULE_WEIGHT)
@@ -89,7 +93,7 @@ public class RuleWeightLogicFilter implements ILogicFilter<RuleActionEntity.Raff
         String[] ruleValueGroups = ruleValue.split(Constants.SPACE);
         for (String ruleValueKey : ruleValueGroups) {
             // 有效性检查
-            if (null == ruleValue || StringUtils.isBlank(ruleValueKey)) {
+            if (null == ruleValueKey || StringUtils.isBlank(ruleValueKey)) {
                 return null;
             }
 
