@@ -76,6 +76,14 @@ public interface IStrategyRepository {
     String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel);
 
     /**
+     * 通过策略id + 规则模型 查询规则值
+     * @param strategyId
+     * @param ruleModel
+     * @return
+     */
+    String queryStrategyRuleValue(Long strategyId, String ruleModel);
+
+    /**
      * 通过策略id + 奖品id查询获奖模型值对象(StrategyAwardRuleModelVO)
      * @param strategyId
      * @param awardId

@@ -7,9 +7,10 @@ import org.example.domain.strategy.model.entity.RuleActionEntity;
 import org.example.domain.strategy.model.entity.RuleMatterEntity;
 import org.example.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import org.example.domain.strategy.respository.IStrategyRepository;
+import org.example.domain.strategy.service.AbstractRaffleStrategy;
 import org.example.domain.strategy.service.armory.IStrategyDispatch;
-import org.example.domain.strategy.service.rule.ILogicFilter;
-import org.example.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import org.example.domain.strategy.service.rule.filter.ILogicFilter;
+import org.example.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

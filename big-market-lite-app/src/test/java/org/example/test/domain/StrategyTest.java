@@ -14,6 +14,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
 import java.util.*;
 
+/**
+ * 策略领域测试
+ */
+
 @Slf4j
 @SpringBootTest
 @RunWith(SpringRunner.class)

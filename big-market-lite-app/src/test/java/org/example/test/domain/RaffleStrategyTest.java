@@ -6,8 +6,8 @@ import org.example.domain.strategy.model.entity.RaffleAwardEntity;
 import org.example.domain.strategy.model.entity.RaffleFactorEntity;
 import org.example.domain.strategy.service.IRaffleStrategy;
 import org.example.domain.strategy.service.armory.IStrategyArmory;
-import org.example.domain.strategy.service.rule.impl.RuleLockLogicFilter;
-import org.example.domain.strategy.service.rule.impl.RuleWeightLogicFilter;
+import org.example.domain.strategy.service.rule.filter.impl.RuleLockLogicFilter;
+import org.example.domain.strategy.service.rule.filter.impl.RuleWeightLogicFilter;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +16,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import javax.annotation.Resource;
+
+/**
+ * 抽奖策略测试
+ */
 
 @Slf4j
 @RunWith(SpringRunner.class)

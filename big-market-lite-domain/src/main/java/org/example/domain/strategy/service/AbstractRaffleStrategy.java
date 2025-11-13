@@ -1,4 +1,4 @@
-package org.example.domain.strategy.service.raffle;
+package org.example.domain.strategy.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -9,9 +9,8 @@ import org.example.domain.strategy.model.entity.StrategyEntity;
 import org.example.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import org.example.domain.strategy.model.vo.StrategyAwardRuleModelVO;
 import org.example.domain.strategy.respository.IStrategyRepository;
-import org.example.domain.strategy.service.IRaffleStrategy;
 import org.example.domain.strategy.service.armory.IStrategyDispatch;
-import org.example.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import org.example.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import org.example.types.enums.ResponseCode;
 import org.example.types.exception.AppException;
 

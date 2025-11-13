@@ -1,4 +1,4 @@
-package org.example.domain.strategy.service.rule.impl;
+package org.example.domain.strategy.service.rule.filter.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -7,17 +7,14 @@ import org.example.domain.strategy.model.entity.RuleMatterEntity;
 import org.example.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import org.example.domain.strategy.respository.IStrategyRepository;
 import org.example.domain.strategy.service.annotation.LogicStrategy;
-import org.example.domain.strategy.service.rule.ILogicFilter;
-import org.example.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import org.example.domain.strategy.service.rule.filter.ILogicFilter;
+import org.example.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import org.example.types.common.Constants;
 import org.example.types.exception.AppException;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 【抽奖前规则】 根据抽奖权重返回可抽奖范围
@@ -62,7 +59,8 @@ public class RuleWeightLogicFilter implements ILogicFilter<RuleActionEntity.Raff
         // 确定抽奖区间(即找到小于userScored的最大获奖区间)
         // 2500积分 -> null  4500积分 -> 4000抽奖档  5500积分 -> 5000抽奖档
         Long nextValue = analyticalSortedKeys.stream()
-                .filter(key -> userScore <= key)
+                .sorted(Comparator.reverseOrder())
+                .filter(key -> userScore >= key)
                 .findFirst()
                 .orElse(null);
 
