@@ -4,45 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a681a1c6-e881-4c8a-b14c-0bc66cee6f84" name="Changes" comment="feat: chap08 抽奖规则树模型结构设计">
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/rule_tree_mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/rule_tree_node_line_mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/rule_tree_node_mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/infrastructure/StrategyRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRuleTreeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRuleTreeNodeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRuleTreeNodeLineDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RuleTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RuleTreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RuleTreeNodeLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a681a1c6-e881-4c8a-b14c-0bc66cee6f84" name="Changes" comment="feat: chap09 模板模式串联抽奖规则">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/data/log/log-error-2025-11-10.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/data/log/log-info-2025-11-04.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/LogicChainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/LogicChainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/LogicTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/LogicTreeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/RaffleStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/RaffleStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/vo/RuleTreeNodeLineVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/vo/RuleTreeNodeLineVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/vo/RuleTreeNodeVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/vo/RuleTreeNodeVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/vo/RuleTreeVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/vo/RuleTreeVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/respository/IStrategyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/respository/IStrategyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/AbstractRaffleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/AbstractRaffleStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/raffle/DefaultRaffleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/raffle/DefaultRaffleStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/chain/ILogicChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/chain/ILogicChain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/chain/factory/DefaultChainFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/chain/factory/DefaultChainFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/chain/impl/BlackListLogicChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/chain/impl/BlackListLogicChain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/chain/impl/DefaultLogicChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/chain/impl/DefaultLogicChain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/chain/impl/RuleWeightLogicChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/chain/impl/RuleWeightLogicChain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/tree/factory/DefaultTreeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/tree/factory/DefaultTreeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/tree/factory/engine/IDecisionTreeEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/tree/factory/engine/IDecisionTreeEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/tree/factory/engine/impl/DecisionTreeEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/tree/factory/engine/impl/DecisionTreeEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/tree/impl/RuleLuckAwardLogicTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/tree/impl/RuleLuckAwardLogicTreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/dao/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/dao/po/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/repository/StrategyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/repository/StrategyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/entity/RaffleFactorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/entity/RaffleFactorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/vo/StrategyAwardRuleModelVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/vo/StrategyAwardRuleModelVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/annotation/LogicStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/filter/ILogicFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/filter/factory/DefaultLogicFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/filter/impl/RuleBlackListLogicFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/filter/impl/RuleLockLogicFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/filter/impl/RuleWeightLogicFilter.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +76,7 @@
     "JUnit.StrategyRepositoryTest.executor": "Run",
     "JUnit.StrategyRepositoryTest.queryRuleTreeVOByTreeId.executor": "Run",
     "JUnit.StrategyTest.executor": "Run",
+    "Maven.big-market-lite [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "251120-chap09",
     "kotlin-language-version-configured": "true",
@@ -131,7 +103,7 @@
       <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-infrastructure\src\main\java\org\example\infrastructure\persistent\po" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RaffleStrategyTest.test_LogicChain_rule_weight">
+  <component name="RunManager" selected="JUnit.RaffleStrategyTest">
     <configuration name="LogicChainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="big-market-lite-app" />
       <extension name="coverage">
@@ -238,10 +210,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RaffleStrategyTest" />
         <item itemvalue="JUnit.RaffleStrategyTest.test_LogicChain_rule_weight" />
         <item itemvalue="JUnit.RaffleStrategyTest.test_LogicChain_rule_default" />
         <item itemvalue="JUnit.RaffleStrategyTest.test_LogicChain_rule_blacklist" />
-        <item itemvalue="JUnit.RaffleStrategyTest" />
         <item itemvalue="JUnit.LogicChainTest" />
       </list>
     </recent_temporary>
