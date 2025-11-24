@@ -3,5 +3,17 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/big-market-lite-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/big-market-lite-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/big-market-lite-app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/big-market-lite-app/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/big-market-lite-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/big-market-lite-domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/big-market-lite-infrastructure/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/big-market-lite-trigger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/big-market-lite-trigger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/big-market-lite-types/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/big-market-lite-types/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>

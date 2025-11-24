@@ -3,6 +3,7 @@ package org.example.domain.strategy.service.rule.chain.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.example.domain.strategy.respository.IStrategyRepository;
 import org.example.domain.strategy.service.rule.chain.AbstractLogicChain;
+import org.example.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import org.example.types.common.Constants;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +22,7 @@ public class BlackListLogicChain extends AbstractLogicChain {
 
     @Override
     protected String ruleModel() {
-        return "rule_blacklist";
+        return DefaultChainFactory.LogicModel.RULE_BLACKLIST.getCode();
     }
 
     /**
@@ -30,10 +31,10 @@ public class BlackListLogicChain extends AbstractLogicChain {
      * 2. 用户不是黑名单用户，则通过下一个责任节点继续尝试获取奖品ID
      * @param userId 用户ID
      * @param strategyId 策略ID
-     * @return 奖品ID
+     * @return 策略奖品对象
      */
     @Override
-    public Integer logic(String userId, Long strategyId) {
+    public DefaultChainFactory.StrategyAwardVO logic(String userId, Long strategyId) {
         log.info("抽奖责任链-黑名单开始 userId: {} strategyId: {} ruleModel: {}", userId, strategyId, ruleModel());
 
         // 查询规则值配置
@@ -47,7 +48,10 @@ public class BlackListLogicChain extends AbstractLogicChain {
             // null无法调用equals()方法，因此要将非空值放在左侧
             if (userId.equals(userBlackId)) {
                 log.info("抽奖责任链-黑名单接管 userId: {} strategyId: {} ruleModel: {} awardId: {}", userId, strategyId, ruleModel(), awardId);
-                return awardId;
+                return DefaultChainFactory.StrategyAwardVO.builder()
+                        .awardId(awardId)
+                        .logicModel(ruleModel())
+                        .build();
             }
         }
 

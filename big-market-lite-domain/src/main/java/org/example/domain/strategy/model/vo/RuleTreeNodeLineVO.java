@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RuleTreeNodeLineVO {
     // 规则树ID
-    private Integer treeId;
+    private String treeId;
 
     /**
      * From和To的存在是为了判断当前树节点是否还能继续向下进行搜索

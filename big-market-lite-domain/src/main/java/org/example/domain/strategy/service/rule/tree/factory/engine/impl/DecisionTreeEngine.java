@@ -38,8 +38,8 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
      * @return 策略奖品实例(奖品ID和奖品规则)
      */
     @Override
-    public DefaultTreeFactory.StrategyAwardData process(String userId, Long strategyId, Integer awardId) {
-        DefaultTreeFactory.StrategyAwardData strategyAwardData = null;
+    public DefaultTreeFactory.StrategyAwardVO process(String userId, Long strategyId, Integer awardId) {
+        DefaultTreeFactory.StrategyAwardVO strategyAwardVO = null;
 
         // 从规则树中获取信息
         // 根节点名称
@@ -50,20 +50,20 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
         // 获取根节点并执行该决策树，叶子节点即为需要执行的决策
         RuleTreeNodeVO ruleTreeNodeVO = treeNodeMap.get(treeRootRuleNode);
         while(null != treeRootRuleNode) {
-            // 获取节点实例，明确决策动作(TreeActionEntity)，构建策略奖品实体(StrategyAwardData)
+            // 获取节点实例，明确决策动作(TreeActionEntity)，构建策略奖品实体(StrategyAwardVO)
             ILogicTreeNode logicTreeNode = logicTreeNodeGroup.get(ruleTreeNodeVO.getRuleKey());
             DefaultTreeFactory.TreeActionEntity treeActionEntity = logicTreeNode.logic(userId, strategyId, awardId);
 
             // 获取规则过滤校验类型值(ALLOW/TAKE_OVER)
             RuleLogicCheckTypeVO ruleLogicCheckTypeVO = treeActionEntity.getRuleLogicCheckTypeVO();
-            strategyAwardData = treeActionEntity.getStrategyAwardData();
+            strategyAwardVO = treeActionEntity.getStrategyAwardVO();
             log.info("决策树引擎【{}】treeId:{} node:{} code:{}", ruleTreeVO.getTreeName(), ruleTreeVO.getTreeId(), treeRootRuleNode, ruleLogicCheckTypeVO.getCode());
 
             // 获取下一个树节点
             treeRootRuleNode = nextNode(ruleLogicCheckTypeVO.getCode(), ruleTreeNodeVO.getTreeNodeLineVOList());
             ruleTreeNodeVO = treeNodeMap.get(treeRootRuleNode);
         }
-        return strategyAwardData;
+        return strategyAwardVO;
     }
 
     /**

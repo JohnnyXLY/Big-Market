@@ -6,6 +6,9 @@ import org.example.domain.strategy.model.entity.RaffleAwardEntity;
 import org.example.domain.strategy.model.entity.RaffleFactorEntity;
 import org.example.domain.strategy.service.IRaffleStrategy;
 import org.example.domain.strategy.service.armory.IStrategyArmory;
+import org.example.domain.strategy.service.rule.chain.ILogicChain;
+import org.example.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+import org.example.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain;
 import org.example.domain.strategy.service.rule.filter.impl.RuleLockLogicFilter;
 import org.example.domain.strategy.service.rule.filter.impl.RuleWeightLogicFilter;
 import org.junit.Before;
@@ -29,68 +32,41 @@ public class RaffleStrategyTest {
     private IStrategyArmory strategyArmory;
 
     @Resource
-    private IRaffleStrategy raffleStrategy;
+    private RuleWeightLogicChain ruleWeightLogicChain;
 
     @Resource
-    private RuleWeightLogicFilter ruleWeightLogicFilter;
-
-    @Resource
-    private RuleLockLogicFilter ruleLockLogicFilter;
+    private DefaultChainFactory defaultChainFactory;
 
     @Before
     public void setUp() {
-        // 策略装配 100001、100002、100003
+        // 策略装配
         log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100001L));
         log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100002L));
         log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100003L));
-
-        // 通过反射给对象赋值
-        ReflectionTestUtils.setField(ruleWeightLogicFilter, "userScore", 5500L);
-        ReflectionTestUtils.setField(ruleLockLogicFilter, "userRaffleCount", 0L);
+        log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100006L));
     }
 
     @Test
-    public void test_performRaffle() {
-        // RaffleAwardEntity performRaffle(RaffleFactorEntity raffleFactorEntity);
-        // 需要构建一个RaffleFactorEntity(userId, strategyId)对象传入
-        RaffleFactorEntity raffleFactorEntity = RaffleFactorEntity.builder()
-                .strategyId(100001L)
-                .userId("JohnnyXLY")
-                .build();
-
-        RaffleAwardEntity raffleAwardEntity = raffleStrategy.performRaffle(raffleFactorEntity);
-
-        log.info("请求参数：{}", JSON.toJSONString(raffleFactorEntity));
-        log.info("测试结果：{}", JSON.toJSONString(raffleAwardEntity));
+    public void test_LogicChain_rule_blacklist() {
+        ILogicChain logicChain = defaultChainFactory.openLogicChain(100001L);
+        DefaultChainFactory.StrategyAwardVO strategyAwardVO = logicChain.logic("user001", 100001L);
+        log.info("测试结果：{}", JSON.toJSONString(strategyAwardVO));
     }
 
     @Test
-    public void test_performRaffle_blacklist() {
-        // RaffleAwardEntity performRaffle(RaffleFactorEntity raffleFactorEntity);
-        // 需要构建一个RaffleFactorEntity(userId, strategyId)对象传入
-        RaffleFactorEntity raffleFactorEntity = RaffleFactorEntity.builder()
-                .strategyId(100001L)
-                .userId("user001")  // 黑名单用户: user001, user002, user003
-                .build();
+    public void test_LogicChain_rule_weight() {
+        ReflectionTestUtils.setField(ruleWeightLogicChain, "userScore", 5500L);
 
-        RaffleAwardEntity raffleAwardEntity = raffleStrategy.performRaffle(raffleFactorEntity);
-
-        log.info("请求参数：{}", JSON.toJSONString(raffleFactorEntity));
-        log.info("测试结果：{}", JSON.toJSONString(raffleAwardEntity));
+        ILogicChain logicChain = defaultChainFactory.openLogicChain(100001L);
+        DefaultChainFactory.StrategyAwardVO strategyAwardVO = logicChain.logic("JohnnyXLY", 100001L);
+        log.info("测试结果：{}", JSON.toJSONString(strategyAwardVO));
     }
 
     @Test
-    public void test_raffle_center_rule_lock() {
-        // RaffleAwardEntity performRaffle(RaffleFactorEntity raffleFactorEntity);
-        // 需要构建一个RaffleFactorEntity(userId, strategyId)对象传入
-        RaffleFactorEntity raffleFactorEntity = RaffleFactorEntity.builder()
-                .strategyId(100003L)
-                .userId("JohnnyXLY")
-                .build();
-
-        RaffleAwardEntity raffleAwardEntity = raffleStrategy.performRaffle(raffleFactorEntity);
-
-        log.info("请求参数：{}", JSON.toJSONString(raffleFactorEntity));
-        log.info("测试结果：{}", JSON.toJSONString(raffleAwardEntity));
+    public void test_LogicChain_rule_default() {
+        ILogicChain logicChain = defaultChainFactory.openLogicChain(100001L);
+        DefaultChainFactory.StrategyAwardVO strategyAwardVO = logicChain.logic("JohnnyXLY", 100001L);
+        log.info("测试结果：{}", JSON.toJSONString(strategyAwardVO));
     }
+
 }

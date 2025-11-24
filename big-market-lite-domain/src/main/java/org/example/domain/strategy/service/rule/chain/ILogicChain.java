@@ -1,5 +1,7 @@
 package org.example.domain.strategy.service.rule.chain;
 
+import org.example.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+
 /**
  * 抽奖规则策略责任链接口
  * 将原有的抽奖前置规则抽象，变更为责任链处理
@@ -13,7 +15,7 @@ public interface ILogicChain extends ILogicChainArmory {
      * 责任链接口，不同策略实现逻辑不同
      * @param userId 用户ID
      * @param strategyId 策略ID
-     * @return 奖品ID
+     * @return 策略奖品对象
      */
-    Integer logic(String userId, Long strategyId);
+    DefaultChainFactory.StrategyAwardVO logic(String userId, Long strategyId);
 }
