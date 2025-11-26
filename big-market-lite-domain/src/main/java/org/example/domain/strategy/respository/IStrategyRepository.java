@@ -5,6 +5,7 @@ import org.example.domain.strategy.model.entity.StrategyEntity;
 import org.example.domain.strategy.model.entity.StrategyRuleEntity;
 import org.example.domain.strategy.model.vo.RuleTreeVO;
 import org.example.domain.strategy.model.vo.StrategyAwardRuleModelVO;
+import org.example.domain.strategy.model.vo.StrategyAwardStockKeyVO;
 
 import java.util.List;
 import java.util.Map;
@@ -98,4 +99,37 @@ public interface IStrategyRepository {
      * @return 规则树对象
      */
     RuleTreeVO queryRuleTreeVOByTreeId(String treeId);
+
+    /**
+     * 缓存奖品库存总量
+     * @param cacheKey 缓存key(包含strategyId、awardId的信息)
+     * @param awardCount 奖品库存总量
+     */
+    void cacheStrategyAwardCount(String cacheKey, Integer awardCount);
+
+    /**
+     * 库存扣减
+     * @param cacheKey 缓存key
+     * @return 库存是否扣减
+     */
+    Boolean subtractionAwardStock(String cacheKey);
+
+    /**
+     * 将奖品标识值对象写入奖品库存消费队列
+     * @param strategyAwardStockKeyVO 策略奖品库存Key标识值对象
+     */
+    void awardStockConsumeSendQueue(StrategyAwardStockKeyVO strategyAwardStockKeyVO);
+
+    /**
+     * 从消费队列中获取对象
+     * @return 策略奖品库存Key标识值对象
+     */
+    StrategyAwardStockKeyVO takeQueueValue();
+
+    /**
+     * 更新数据库库存信息
+     * @param strategyId 策略ID
+     * @param awardId 奖品ID
+     */
+    void updateStrategyAwardStock(Long strategyId, Integer awardId);
 }

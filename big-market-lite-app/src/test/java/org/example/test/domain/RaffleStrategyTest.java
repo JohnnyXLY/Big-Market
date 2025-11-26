@@ -2,6 +2,11 @@ package org.example.test.domain;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
+import org.example.domain.strategy.model.entity.RaffleAwardEntity;
+import org.example.domain.strategy.model.entity.RaffleFactorEntity;
+import org.example.domain.strategy.model.vo.StrategyAwardStockKeyVO;
+import org.example.domain.strategy.service.IRaffleStock;
+import org.example.domain.strategy.service.IRaffleStrategy;
 import org.example.domain.strategy.service.armory.IStrategyArmory;
 import org.example.domain.strategy.service.rule.chain.ILogicChain;
 import org.example.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
@@ -14,6 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import javax.annotation.Resource;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * 抽奖策略测试
@@ -27,10 +33,16 @@ public class RaffleStrategyTest {
     private IStrategyArmory strategyArmory;
 
     @Resource
+    private IRaffleStrategy raffleStrategy;
+
+    @Resource
     private RuleWeightLogicChain ruleWeightLogicChain;
 
     @Resource
     private DefaultChainFactory defaultChainFactory;
+
+    @Resource
+    private IRaffleStock raffleStock;
 
     @Before
     public void setUp() {
@@ -39,6 +51,24 @@ public class RaffleStrategyTest {
         log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100002L));
         log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100003L));
         log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100006L));
+    }
+
+    @Test
+    public void test_performRaffle() throws InterruptedException {
+        for (int i = 0; i < 3; i ++ ) {
+            RaffleFactorEntity raffleFactorEntity = RaffleFactorEntity.builder()
+                    .userId("JohnnyXLY")
+                    .strategyId(100006L)
+                    .build();
+
+            RaffleAwardEntity raffleAwardEntity = raffleStrategy.performRaffle(raffleFactorEntity);
+
+            log.info("请求参数：{}", JSON.toJSONString(raffleFactorEntity));
+            log.info("测试结果：{}", JSON.toJSONString(raffleAwardEntity));
+        }
+
+        // 等待 UpdateAwardStockJob 消费队列
+        new CountDownLatch(1).await();
     }
 
     @Test
@@ -62,6 +92,12 @@ public class RaffleStrategyTest {
         ILogicChain logicChain = defaultChainFactory.openLogicChain(100001L);
         DefaultChainFactory.StrategyAwardVO strategyAwardVO = logicChain.logic("JohnnyXLY", 100001L);
         log.info("测试结果：{}", JSON.toJSONString(strategyAwardVO));
+    }
+
+    @Test
+    public void test_takeQueueValue() throws InterruptedException {
+        StrategyAwardStockKeyVO strategyAwardStockKeyVO = raffleStock.takeQueueValue();
+        log.info("测试结果：{}", JSON.toJSONString(strategyAwardStockKeyVO));
     }
 
 }

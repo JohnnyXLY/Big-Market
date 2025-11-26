@@ -244,4 +244,26 @@ public interface IRedisService {
      */
     <T> RBloomFilter<T> getBloomFilter(String key);
 
+    /**
+     * 设置值
+     *
+     * @param key   key 键
+     * @param value 值
+     */
+    void setAtomicLong(String key, Integer value);
+
+    /**
+     * 获取值
+     *
+     * @param key   key 键
+     */
+    Long getAtomicLong(String key);
+
+    /**
+     * 判断key是否存在并加锁
+     *
+     * @param key 键
+     * @return 加锁操作是否成功
+     */
+    Boolean setNx(String key);
 }

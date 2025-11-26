@@ -154,5 +154,23 @@ public class RedissonService implements IRedisService {
         return redissonClient.getBloomFilter(key);
     }
 
+    @Override
+    public void setAtomicLong(String key, Integer value) {
+        // 建立redis缓存，支持原子操作
+        redissonClient.getAtomicLong(key).set(value);
+    }
+
+    @Override
+    public Long getAtomicLong(String key) {
+        return redissonClient.getAtomicLong(key).get();
+    }
+
+    @Override
+    public Boolean setNx(String key) {
+        // 若 key 不存在 -> 把 value("lock") 存入 Redis，返回 true(设置成功)
+        // 若 key 已存在 -> 不做任何修改，返回 false(设置失败)
+        return redissonClient.getBucket(key).trySet("lock");
+    }
+
 
 }
