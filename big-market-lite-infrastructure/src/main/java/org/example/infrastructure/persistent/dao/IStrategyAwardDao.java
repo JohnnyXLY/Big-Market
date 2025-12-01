@@ -6,7 +6,7 @@ import org.example.infrastructure.persistent.po.StrategyAward;
 import java.util.List;
 
 /**
- * 抽奖策略奖品明细配置 DAO
+ * 抽奖策略奖品明细配置DAO
  */
 
 @Mapper

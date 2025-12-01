@@ -6,7 +6,7 @@ import org.example.infrastructure.persistent.po.Award;
 import java.util.List;
 
 /**
- * 奖品表 DAO
+ * 奖品表DAO
  */
 
 @Mapper

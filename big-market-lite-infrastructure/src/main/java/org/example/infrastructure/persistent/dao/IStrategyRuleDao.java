@@ -6,7 +6,7 @@ import org.example.infrastructure.persistent.po.StrategyRule;
 import java.util.List;
 
 /**
- * 策略规则 DAO
+ * 策略规则DAO
  */
 
 @Mapper
