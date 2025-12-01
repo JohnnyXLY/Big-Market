@@ -4,32 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a681a1c6-e881-4c8a-b14c-0bc66cee6f84" name="Changes" comment="feat: chap10 不超卖库存规则实现">
-      <change afterPath="$PROJECT_DIR$/big-market-lite-api/src/main/java/org/example/trigger/api/IRaffleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-api/src/main/java/org/example/trigger/api/dto/RaffleAwardListRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-api/src/main/java/org/example/trigger/api/dto/RaffleAwardListResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-api/src/main/java/org/example/trigger/api/dto/RaffleRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-api/src/main/java/org/example/trigger/api/dto/RaffleResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/IRaffleAward.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-trigger/src/main/java/org/example/trigger/http/RaffleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/model/Response.java" afterDir="false" />
+    <list default="true" id="a681a1c6-e881-4c8a-b14c-0bc66cee6f84" name="Changes" comment="feat: chap11 抽奖API接口实现">
+      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityAccountFlow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityCount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market_01.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market_02.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-api/src/main/java/org/example/api/dto/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-api/src/main/java/org/example/api/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-api/src/main/java/org/example/api/response/Response.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/java/org/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/java/org/example/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/strategy_award_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/strategy_award_mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/entity/RaffleAwardEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/entity/RaffleAwardEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/entity/StrategyAwardEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/model/entity/StrategyAwardEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/respository/IStrategyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/respository/IStrategyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/AbstractRaffleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/AbstractRaffleStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/raffle/DefaultRaffleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/raffle/DefaultRaffleStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/tree/factory/engine/impl/DecisionTreeEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/strategy/service/rule/tree/factory/engine/impl/DecisionTreeEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/repository/StrategyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/repository/StrategyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/enums/ResponseCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/enums/ResponseCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -103,9 +86,9 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.Application.executor": "Run",
-    "git-widget-placeholder": "251129-chap11",
+    "git-widget-placeholder": "251130-chap12",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/JohnnyXLY/Desktop/big-market-lite/docs/dev-ops/environment/mysql/sql",
+    "last_opened_file_path": "C:/Users/JohnnyXLY/Desktop/big-market-lite/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -123,12 +106,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-infrastructure\src\main\java\org\example\infrastructure\persistent\po" />
       <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\docs\dev-ops\environment\mysql\sql" />
       <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-infrastructure\src\main\java\org\example\infrastructure\persistent\dao" />
       <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-app\src\main\resources\mybatis\mapper" />
-      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-infrastructure\src\main\java\org\example\infrastructure\persistent\po" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.infrastructure.persistent.po" />
       <recent name="org.example.types.enums" />
     </key>
   </component>
@@ -242,9 +226,9 @@
       <list>
         <item itemvalue="JUnit.RaffleStrategyTest.test_takeQueueValue" />
         <item itemvalue="JUnit.RaffleStrategyTest.test_performRaffle" />
-        <item itemvalue="JUnit.RaffleStrategyTest" />
         <item itemvalue="JUnit.RaffleStrategyTest.test_LogicChain_rule_weight" />
         <item itemvalue="JUnit.RaffleStrategyTest.test_LogicChain_rule_default" />
+        <item itemvalue="JUnit.RaffleStrategyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -279,6 +263,7 @@
       <workItem from="1764050916724" duration="21148000" />
       <workItem from="1764120388762" duration="24000" />
       <workItem from="1764385991061" duration="16055000" />
+      <workItem from="1764555832452" duration="4590000" />
     </task>
     <task id="LOCAL-00001" summary="feat: chap08 抽奖规则树模型结构设计">
       <option name="closed" value="true" />
@@ -336,7 +321,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: chap08 抽奖规则树模型结构设计" />
     <MESSAGE value="feat: chap09 模板模式串联抽奖规则" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: chap09 模板模式串联抽奖规则" />
+    <MESSAGE value="feat: chap11 抽奖API接口实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: chap11 抽奖API接口实现" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
