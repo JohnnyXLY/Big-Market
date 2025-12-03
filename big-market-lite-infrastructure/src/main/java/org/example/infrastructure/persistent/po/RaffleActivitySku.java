@@ -5,36 +5,36 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * 抽奖活动次数持久化对象
+ * 抽奖活动sku持久化对象
  */
 
 @Data
-public class RaffleActivityCount {
+public class RaffleActivitySku {
 
     /**
-     * 自增ID
+     * 商品sku
      */
-    private Long id;
+    private Long sku;
 
     /**
-     * 活动次数编号
+     * 活动ID
+     */
+    private Long activityId;
+
+    /**
+     * 活动个人参与次数ID
      */
     private Long activityCountId;
 
     /**
-     * 总次数
+     * 库存总量
      */
-    private Integer totalCount;
+    private Integer stockCount;
 
     /**
-     * 日次数
+     * 剩余库存
      */
-    private Integer dayCount;
-
-    /**
-     * 月次数
-     */
-    private Integer monthCount;
+    private Integer stockCountSurplus;
 
     /**
      * 创建时间
@@ -47,5 +47,3 @@ public class RaffleActivityCount {
     private Date updateTime;
 
 }
-
-

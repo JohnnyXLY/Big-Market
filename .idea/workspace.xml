@@ -4,31 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a681a1c6-e881-4c8a-b14c-0bc66cee6f84" name="Changes" comment="feat: chap12 用户参与抽奖活动库表设计">
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_account_flow_mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_account_mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_count_mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_order_mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/infrastructure/RaffleActivityDaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/infrastructure/RaffleActivityOrderDaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityAccountDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityAccountFlowDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityCountDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityOrderDao.java" afterDir="false" />
+    <list default="true" id="a681a1c6-e881-4c8a-b14c-0bc66cee6f84" name="Changes" comment="feat: chap13 引入分库分表路由组件">
+      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_sku_mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/activity/RaffleOrderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/aggregate/CreateOrderAggregate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivityAccountEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivityCountEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivityEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivityOrderEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivityShopCartEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivitySkuEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/vo/ActivityStateVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/vo/OrderStateVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/repository/IActivityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/service/AbstractRaffleActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/service/IRaffleOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/service/RaffleActivityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivitySkuDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivitySku.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/repository/ActivityRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IAwardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IAwardDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IStrategyAwardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IStrategyAwardDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IStrategyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IStrategyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IStrategyRuleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IStrategyRuleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_account_flow_mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_count_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_count_mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_order_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_order_mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/LogicChainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/strategy/LogicChainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/LogicTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/strategy/LogicTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/RaffleStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/strategy/RaffleStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/StrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/strategy/StrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityAccountFlowDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityCountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityCountDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityAccountFlow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/common/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market_01.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market_01.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market_02.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market_02.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +102,7 @@
     "JUnit.RaffleActivityDaoTest.test_queryRaffleActivityByActivityId.executor": "Run",
     "JUnit.RaffleActivityOrderDaoTest.executor": "Run",
     "JUnit.RaffleActivityOrderDaoTest.test_insert_random.executor": "Run",
+    "JUnit.RaffleOrderTest.test_createRaffleActivityOrder.executor": "Debug",
     "JUnit.RaffleStrategyTest.executor": "Debug",
     "JUnit.RaffleStrategyTest.test_LogicChain_rule_blacklist.executor": "Run",
     "JUnit.RaffleStrategyTest.test_LogicChain_rule_default.executor": "Debug",
@@ -104,9 +119,9 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.Application.executor": "Run",
-    "git-widget-placeholder": "251201-chap13",
+    "git-widget-placeholder": "251202-chap14",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/JohnnyXLY/Desktop/big-market-lite/big-market-lite-app/src/test/java/org/example/test/infrastructure",
+    "last_opened_file_path": "C:/Users/JohnnyXLY/Desktop/big-market-lite/big-market-lite-app/src/test/java/org/example/test/domain/strategy",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -124,34 +139,24 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-app\src\test\java\org\example\test\infrastructure" />
+      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-app\src\test\java\org\example\test\domain\strategy" />
+      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-domain\src\main\java\org\example\domain\activity\model\vo" />
       <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-app\src\main\resources\mybatis\mapper" />
-      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-infrastructure\src\main\java\org\example\infrastructure\persistent\dao" />
       <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\docs\dev-ops\environment\mysql\sql" />
-      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-infrastructure\src\main\java\org\example\infrastructure\persistent\po" />
+      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-app\src\test\java\org\example\test\infrastructure" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.domain.activity.model.aggregate" />
+      <recent name="org.example.domain.activity.model.entity" />
+      <recent name="org.example.infrastructure.persistent.dao" />
       <recent name="org.example.infrastructure.persistent.po" />
       <recent name="org.example.types.enums" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RaffleActivityOrderDaoTest.test_insert_random">
-    <configuration name="RaffleActivityDaoTest.test_queryRaffleActivityByActivityId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="big-market-lite-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.test.infrastructure.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.test.infrastructure" />
-      <option name="MAIN_CLASS_NAME" value="org.example.test.infrastructure.RaffleActivityDaoTest" />
-      <option name="METHOD_NAME" value="test_queryRaffleActivityByActivityId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.RaffleOrderTest.test_createRaffleActivityOrder">
     <configuration name="RaffleActivityOrderDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="big-market-lite-app" />
       <extension name="coverage">
@@ -178,6 +183,22 @@
       <option name="PACKAGE_NAME" value="org.example.test.infrastructure" />
       <option name="MAIN_CLASS_NAME" value="org.example.test.infrastructure.RaffleActivityOrderDaoTest" />
       <option name="METHOD_NAME" value="test_insert_random" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RaffleOrderTest.test_createRaffleActivityOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="big-market-lite-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.test.domain.activity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.test.domain.activity" />
+      <option name="MAIN_CLASS_NAME" value="org.example.test.domain.activity.RaffleOrderTest" />
+      <option name="METHOD_NAME" value="test_createRaffleActivityOrder" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -243,11 +264,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RaffleActivityOrderDaoTest.test_insert_random" />
-        <item itemvalue="JUnit.RaffleActivityOrderDaoTest" />
-        <item itemvalue="JUnit.RaffleActivityDaoTest.test_queryRaffleActivityByActivityId" />
+        <item itemvalue="JUnit.RaffleOrderTest.test_createRaffleActivityOrder" />
         <item itemvalue="JUnit.RaffleStrategyTest.test_takeQueueValue" />
         <item itemvalue="JUnit.RaffleStrategyTest.test_performRaffle" />
+        <item itemvalue="JUnit.RaffleActivityOrderDaoTest.test_insert_random" />
+        <item itemvalue="JUnit.RaffleActivityOrderDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -283,6 +304,8 @@
       <workItem from="1764120388762" duration="24000" />
       <workItem from="1764385991061" duration="16055000" />
       <workItem from="1764555832452" duration="4590000" />
+      <workItem from="1764660427777" duration="10182000" />
+      <workItem from="1764732637015" duration="2828000" />
     </task>
     <task id="LOCAL-00001" summary="feat: chap08 抽奖规则树模型结构设计">
       <option name="closed" value="true" />
@@ -308,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763967908656</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: chap13 引入分库分表路由组件">
+      <option name="closed" value="true" />
+      <created>1764580520673</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764580520673</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +372,19 @@
     <MESSAGE value="feat: chap08 抽奖规则树模型结构设计" />
     <MESSAGE value="feat: chap09 模板模式串联抽奖规则" />
     <MESSAGE value="feat: chap11 抽奖API接口实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: chap11 抽奖API接口实现" />
+    <MESSAGE value="feat: chap13 引入分库分表路由组件" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: chap13 引入分库分表路由组件" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/activity/RaffleOrderTest.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

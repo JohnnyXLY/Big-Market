@@ -1,20 +1,23 @@
-package org.example.infrastructure.persistent.po;
+package org.example.domain.activity.model.entity;
 
+import org.example.domain.activity.model.vo.OrderStateVO;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 /**
- * 抽奖活动订单持久化对象
+ * 活动订单实体对象
+ * 相较于infra层的po对象少了不必要的id createTime updateTime信息
  */
 
 @Data
-public class RaffleActivityOrder {
-
-    /**
-     * 自增ID
-     */
-    private Long id;
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class ActivityOrderEntity {
 
     /**
      * 用户ID
@@ -62,18 +65,8 @@ public class RaffleActivityOrder {
     private Integer monthCount;
 
     /**
-     * 订单状态（not_used、used、expire）
+     * 订单状态
      */
-    private String state;
-
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
+    private OrderStateVO state;
 
 }
