@@ -4,45 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a681a1c6-e881-4c8a-b14c-0bc66cee6f84" name="Changes" comment="feat: chap13 引入分库分表路由组件">
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_sku_mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/activity/RaffleOrderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/aggregate/CreateOrderAggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivityAccountEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivityCountEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivityEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivityOrderEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivityShopCartEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/entity/ActivitySkuEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/vo/ActivityStateVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/model/vo/OrderStateVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/repository/IActivityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/service/AbstractRaffleActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/service/IRaffleOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-domain/src/main/java/org/example/domain/activity/service/RaffleActivityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivitySkuDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivitySku.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/repository/ActivityRepository.java" afterDir="false" />
+    <list default="true" id="a681a1c6-e881-4c8a-b14c-0bc66cee6f84" name="Changes" comment="feat: chap15 抽奖活动流水入库">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_account_flow_mapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_count_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_count_mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_order_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/mybatis/mapper/raffle_activity_order_mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/LogicChainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/strategy/LogicChainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/LogicTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/strategy/LogicTreeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/RaffleStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/strategy/RaffleStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/StrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/strategy/StrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityAccountFlowDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityCountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityCountDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/dao/IRaffleActivityDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityAccountFlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/src/main/java/org/example/infrastructure/persistent/po/RaffleActivityOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-types/src/main/java/org/example/types/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market_01.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market_01.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market_02.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev-ops/environment/mysql/sql/big_market_02.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-app/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-domain/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-infrastructure/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-infrastructure/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big-market-lite-trigger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/big-market-lite-trigger/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/dev-ops/docker-compose-environment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/dev-ops/docker-compose-environment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,150 +62,77 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.dev-ops/docker-compose-environment.yml: Compose Deployment.executor": "Run",
-    "JUnit.LogicChainTest.executor": "Run",
-    "JUnit.LogicChainTest.test_LogicChain_rule_blacklist.executor": "Run",
-    "JUnit.LogicTreeTest.executor": "Run",
-    "JUnit.LogicTreeTest.test_tree_rule.executor": "Run",
-    "JUnit.RaffleActivityDaoTest.test_queryRaffleActivityByActivityId.executor": "Run",
-    "JUnit.RaffleActivityOrderDaoTest.executor": "Run",
-    "JUnit.RaffleActivityOrderDaoTest.test_insert_random.executor": "Run",
-    "JUnit.RaffleOrderTest.test_createRaffleActivityOrder.executor": "Debug",
-    "JUnit.RaffleStrategyTest.executor": "Debug",
-    "JUnit.RaffleStrategyTest.test_LogicChain_rule_blacklist.executor": "Run",
-    "JUnit.RaffleStrategyTest.test_LogicChain_rule_default.executor": "Debug",
-    "JUnit.RaffleStrategyTest.test_LogicChain_rule_weight.executor": "Debug",
-    "JUnit.RaffleStrategyTest.test_performRaffle.executor": "Run",
-    "JUnit.RaffleStrategyTest.test_takeQueueValue.executor": "Run",
-    "JUnit.StrategyRepositoryTest.executor": "Run",
-    "JUnit.StrategyRepositoryTest.queryRuleTreeVOByTreeId.executor": "Run",
-    "JUnit.StrategyTest.executor": "Run",
-    "Maven.big-market-lite [compile].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.Application.executor": "Run",
-    "git-widget-placeholder": "251202-chap14",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/JohnnyXLY/Desktop/big-market-lite/big-market-lite-app/src/test/java/org/example/test/domain/strategy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.dev-ops/docker-compose-environment.yml.mysql-job-dbdata: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.dev-ops/docker-compose-environment.yml.mysql: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.dev-ops/docker-compose-environment.yml.rabbitmq: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.dev-ops/docker-compose-environment.yml.redis-admin: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.dev-ops/docker-compose-environment.yml.redis: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.dev-ops/docker-compose-environment.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LogicChainTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LogicChainTest.test_LogicChain_rule_blacklist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LogicTreeTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LogicTreeTest.test_tree_rule.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RaffleActivityDaoTest.test_queryRaffleActivityByActivityId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RaffleActivityOrderDaoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RaffleActivityOrderDaoTest.test_insert_random.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RaffleOrderTest.test_createRaffleActivityOrder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RaffleOrderTest.test_createSkuRechargeOrder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RaffleStrategyTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.RaffleStrategyTest.test_LogicChain_rule_blacklist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RaffleStrategyTest.test_LogicChain_rule_default.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.RaffleStrategyTest.test_LogicChain_rule_weight.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.RaffleStrategyTest.test_performRaffle.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RaffleStrategyTest.test_takeQueueValue.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StrategyRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StrategyRepositoryTest.queryRuleTreeVOByTreeId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StrategyTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.big-market-lite [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;251210-chap16&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/JohnnyXLY/Desktop/big-market-lite/big-market-lite-domain/src/main/java/org/example/domain/activity/service/rule&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-domain\src\main\java\org\example\domain\activity\service\rule" />
+      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\docs\dev-ops\environment\mysql\sql" />
       <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-app\src\test\java\org\example\test\domain\strategy" />
       <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-domain\src\main\java\org\example\domain\activity\model\vo" />
       <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-app\src\main\resources\mybatis\mapper" />
-      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\docs\dev-ops\environment\mysql\sql" />
-      <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite\big-market-lite-app\src\test\java\org\example\test\infrastructure" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\JohnnyXLY\Desktop\big-market-lite" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.example.domain.activity.model.aggregate" />
+      <recent name="org.example.domain.activity.service.rule.factory" />
       <recent name="org.example.domain.activity.model.entity" />
+      <recent name="org.example.domain.activity.model.aggregate" />
       <recent name="org.example.infrastructure.persistent.dao" />
       <recent name="org.example.infrastructure.persistent.po" />
-      <recent name="org.example.types.enums" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RaffleOrderTest.test_createRaffleActivityOrder">
-    <configuration name="RaffleActivityOrderDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="big-market-lite-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.test.infrastructure.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.test.infrastructure" />
-      <option name="MAIN_CLASS_NAME" value="org.example.test.infrastructure.RaffleActivityOrderDaoTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RaffleActivityOrderDaoTest.test_insert_random" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="big-market-lite-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.test.infrastructure.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.test.infrastructure" />
-      <option name="MAIN_CLASS_NAME" value="org.example.test.infrastructure.RaffleActivityOrderDaoTest" />
-      <option name="METHOD_NAME" value="test_insert_random" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RaffleOrderTest.test_createRaffleActivityOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="big-market-lite-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.test.domain.activity.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.test.domain.activity" />
-      <option name="MAIN_CLASS_NAME" value="org.example.test.domain.activity.RaffleOrderTest" />
-      <option name="METHOD_NAME" value="test_createRaffleActivityOrder" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RaffleStrategyTest.test_performRaffle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="big-market-lite-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.test.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.test.domain" />
-      <option name="MAIN_CLASS_NAME" value="org.example.test.domain.RaffleStrategyTest" />
-      <option name="METHOD_NAME" value="test_performRaffle" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RaffleStrategyTest.test_takeQueueValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="big-market-lite-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.test.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.test.domain" />
-      <option name="MAIN_CLASS_NAME" value="org.example.test.domain.RaffleStrategyTest" />
-      <option name="METHOD_NAME" value="test_takeQueueValue" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Docker.dev-ops/docker-compose-environment.yml.rabbitmq: Compose Deployment">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Big-Market" />
       <method v="2">
@@ -262,13 +159,73 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="dev-ops/docker-compose-environment.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docs/dev-ops/docker-compose-environment.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="dev-ops/docker-compose-environment.yml.mysql-job-dbdata: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mysql-job-dbdata" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docs/dev-ops/docker-compose-environment.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="dev-ops/docker-compose-environment.yml.rabbitmq: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="rabbitmq" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docs/dev-ops/docker-compose-environment.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="dev-ops/docker-compose-environment.yml.redis-admin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="redis-admin" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docs/dev-ops/docker-compose-environment.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="dev-ops/docker-compose-environment.yml.redis: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="redis" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docs/dev-ops/docker-compose-environment.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RaffleOrderTest.test_createRaffleActivityOrder" />
-        <item itemvalue="JUnit.RaffleStrategyTest.test_takeQueueValue" />
-        <item itemvalue="JUnit.RaffleStrategyTest.test_performRaffle" />
-        <item itemvalue="JUnit.RaffleActivityOrderDaoTest.test_insert_random" />
-        <item itemvalue="JUnit.RaffleActivityOrderDaoTest" />
+        <item itemvalue="Docker.dev-ops/docker-compose-environment.yml.rabbitmq: Compose Deployment" />
+        <item itemvalue="Docker.dev-ops/docker-compose-environment.yml.redis-admin: Compose Deployment" />
+        <item itemvalue="Docker.dev-ops/docker-compose-environment.yml.redis: Compose Deployment" />
+        <item itemvalue="Docker.dev-ops/docker-compose-environment.yml: Compose Deployment" />
+        <item itemvalue="Docker.dev-ops/docker-compose-environment.yml.mysql-job-dbdata: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -306,6 +263,12 @@
       <workItem from="1764555832452" duration="4590000" />
       <workItem from="1764660427777" duration="10182000" />
       <workItem from="1764732637015" duration="2828000" />
+      <workItem from="1765162396965" duration="1838000" />
+      <workItem from="1765251415753" duration="15740000" />
+      <workItem from="1765332944926" duration="3731000" />
+      <workItem from="1765336747969" duration="1228000" />
+      <workItem from="1765352176637" duration="5258000" />
+      <workItem from="1765374081921" duration="1664000" />
     </task>
     <task id="LOCAL-00001" summary="feat: chap08 抽奖规则树模型结构设计">
       <option name="closed" value="true" />
@@ -339,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764580520673</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: chap15 抽奖活动流水入库">
+      <option name="closed" value="true" />
+      <created>1765336524697</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765336524697</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,14 +344,15 @@
     <MESSAGE value="feat: chap09 模板模式串联抽奖规则" />
     <MESSAGE value="feat: chap11 抽奖API接口实现" />
     <MESSAGE value="feat: chap13 引入分库分表路由组件" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: chap13 引入分库分表路由组件" />
+    <MESSAGE value="feat: chap15 抽奖活动流水入库" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: chap15 抽奖活动流水入库" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/big-market-lite-app/src/test/java/org/example/test/domain/activity/RaffleOrderTest.java</url>
-          <line>31</line>
+          <line>32</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

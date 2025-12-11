@@ -40,26 +40,6 @@ services:
     networks:
       - my-network
 
-#  # Redis
-#  redis:
-#    image: redis:6.2
-#    container_name: redis
-#    restart: always
-#    hostname: redis
-#    privileged: true
-#    ports:
-#      - 16379:6379
-#    volumes:
-#      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
-#    command: redis-server /usr/local/etc/redis/redis.conf
-#    networks:
-#      - my-network
-#    healthcheck:
-#      test: [ "CMD", "redis-cli", "ping" ]
-#      interval: 10s
-#      timeout: 5s
-#      retries: 3
-
   # Redis
   redis:
     image: redis:7.2.0
@@ -100,6 +80,23 @@ services:
     depends_on:
       redis:
         condition: service_healthy
+
+  # rabbitmq
+  # 账密 admin/admin
+  # rabbitmq-plugins enable rabbitmq_management
+  rabbitmq:
+    image: rabbitmq:3.12.9
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    command: rabbitmq-server
+    volumes:
+      - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
 
 networks:
   my-network:
